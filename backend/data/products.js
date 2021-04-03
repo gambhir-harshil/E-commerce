@@ -27,13 +27,13 @@ const products = [
     countInStock: 5,
   },
   {
-    name: "Amazon Alexa",
+    name: "Alienware Gaming AW17R5-7405SLV-PUS",
     imageUrl:
-      "https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+      "https://images-na.ssl-images-amazon.com/images/I/71GIfE5U54L._SL1500_.jpg",
     description:
-      "It is capable of voice interaction, music playback, making to-do lists, setting alarms, streaming podcasts, playing audiobooks, and providing weather, traffic, sports, and other real-time information, such as news. Alexa can also control several smart devices using itself as a home automation system.",
-    price: 50,
-    countInStock: 25,
+      "The Alienware 17 features up to 8th Gen Intel® Core™ i9-Series processors for the ultimate evolution in high-performance gaming technology. This machine is mechanically engineered with improved Alienware Cryo-Tech V2.0 thermal technology, plus a thin, hinge-forward design to extract the maximum performance from top-of-the-line components. With the cooling system upgraded, and state-of-the-art ventilation, your system can stay cool even under extreme graphics pressure.",
+    price: 1999,
+    countInStock: 7,
   },
   {
     name: "Audio Technica Headphones",
@@ -52,6 +52,24 @@ const products = [
       "JBL Flip 4 is the next generation in the award-winning Flip series; it is a portable Bluetooth speaker that delivers surprisingly powerful stereo sound. This compact speaker is powered by a 3000mAh rechargeable Li-ion battery that offers up to 12 hours of continuous, high-quality audio playtime.",
     price: 140,
     countInStock: 10,
+  },
+  {
+    name: "Air Jordan XXXV PF",
+    imageUrl:
+      "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F11%2Fgoat-roundup-air-jordan-4-fire-red-release-10.jpg?q=75&w=800&cbr=1&fit=max",
+    description:
+      "The lighter the shoe, the less weight to carry, the faster players can go. Evolving last year's release, the Air Jordan XXXV features a stabilising Eclipse plate 2.0, visible cushioning and new Flightwire cables. Lightweight and responsive, it's designed to help players get the most from their power and athleticism. This PF version uses an extra-durable outsole that's ideal for outdoor courts.",
+    price: 199,
+    countInStock: 14,
+  },
+  {
+    name: "Apple Watch Series 6",
+    imageUrl:
+      "https://images-na.ssl-images-amazon.com/images/I/71qMIJnrhFL._SL1500_.jpg",
+    description:
+      "Measure your blood oxygen level with a revolutionary new sensor and app. Take an ECG anytime, anywhere. See your fitness metrics at a glance with the enhanced Always-On Retina display. With Apple Watch Series 6 on your wrist, a healthier, more active, more connected life is within reach.",
+    price: 720,
+    countInStock: 7,
   },
 ];
 
