@@ -13,11 +13,17 @@ app.use(cors());
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.use(express.static(path.join(__dirname, 'frontend/build')));
+
+app.get("https://sleepy-crag-69552.herokuapp.com/api/products/", (req, res) => {
   res.json({ message: "API running..." });
 });
 
-app.use("/api/products", productRoutes);
+app.use("https://sleepy-crag-69552.herokuapp.com/api/products/api/products", productRoutes);
+
+app.get('*', (req,res) =>{
+  res.sendFile(path.join(__dirname+'/frontend/build/index.html'));
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

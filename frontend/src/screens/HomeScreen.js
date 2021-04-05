@@ -31,7 +31,8 @@ function HomeScreen() {
                         <li></li>
                         <li></li>
                     </ul>
-                </div> : 
+                    <div>Sorry for the loading time, Heroku servers are really slow!</div> 
+                </div>:
                     error ? <h2> { error } </h2> : 
                         products.map(product => (
                             <Product 
