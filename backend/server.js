@@ -23,7 +23,7 @@ app.get("https://sleepy-crag-69552.herokuapp.com/api/products/", (req, res) => {
 app.use("https://sleepy-crag-69552.herokuapp.com/api/products/api/products", productRoutes);
 
 app.get('/*', function(req, res) {
-  res.sendFile('public/index1.html' , { root : __dirname}); 
+  res.sendFile(path.join(__dirname, '..frontend/public', 'index.html'));; 
 });
 
 const PORT = process.env.PORT || 5000;
