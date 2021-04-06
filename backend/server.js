@@ -23,7 +23,7 @@ app.get("https://sleepy-crag-69552.herokuapp.com/api/products/", (req, res) => {
 app.use("https://sleepy-crag-69552.herokuapp.com/api/products/api/products", productRoutes);
 
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, '../frontend/build/index.html'), function(err) {
+  res.sendFile(path.join(__dirname, '../frontend/public/index.html'), function(err) {
     if (err) {
       res.status(500).send(err)
     }
