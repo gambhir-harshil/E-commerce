@@ -21,9 +21,13 @@ app.get("https://sleepy-crag-69552.herokuapp.com/api/products/", (req, res) => {
 
 app.use("https://sleepy-crag-69552.herokuapp.com/api/products/api/products", productRoutes);
 
-app.get('*', (req,res) =>{
-  res.sendFile(path.join(__dirname+'/frontend/build/index.html'));
-});
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'frontend/build/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
