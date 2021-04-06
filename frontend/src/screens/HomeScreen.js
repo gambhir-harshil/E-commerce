@@ -22,7 +22,7 @@ function HomeScreen() {
             <h2 className='homescreen_title'>Latest Products</h2>
             <div className="homescreen_products">
                 {loading ? 
-                    <div class="centerdiv">
+                    <div className="centerdiv">
                     <ul>
                         <li></li>
                         <li></li>
@@ -31,7 +31,6 @@ function HomeScreen() {
                         <li></li>
                         <li></li>
                     </ul>
-                    <div>Sorry for the loading time, Heroku servers are really slow!</div> 
                 </div>:
                     error ? <h2> { error } </h2> : 
                         products.map(product => (
