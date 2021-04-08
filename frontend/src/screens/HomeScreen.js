@@ -1,52 +1,46 @@
-import React, { useEffect }  from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import './HomeScreen.css';
+import "./HomeScreen.css";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import Product from '../components/Product';
+// Components
+import Product from "../components/Product";
 
-import { getProducts as listProducts } from '../redux/actions/productActions';
+//Actions
+import { getProducts as listProducts } from "../redux/actions/productActions";
 
-function HomeScreen() {
+const HomeScreen = () => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  const getProducts = useSelector((state) => state.getProducts);
+  const { products, loading, error } = getProducts;
 
-    const getProducts = useSelector(state => state.getProducts);
-    const { products, loading, error } = getProducts;
+  useEffect(() => {
+    dispatch(listProducts());
+  }, [dispatch]);
 
-    useEffect(() => {
-        dispatch(listProducts())
-    }, [dispatch])
-
-    return (
-        <div className='homescreen'>
-            <h2 className='homescreen_title'>Latest Products</h2>
-            <div className="homescreen_products">
-                {loading ? (
-                    <div className="centerdiv">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div> ):
-                    error ? (<h2> { error } </h2>) : (
-                        products.map((product) => (
-                            <Product 
-                                key={product._id} 
-                                productId={product._id} 
-                                description= {product.description}
-                                imageUrl={product.imageUrl}
-                                price ={product.price}
-                                name={product.name}  
-                            />
-                        ))
-                    )}
-            </div>
-        </div>
-    );
+  return (
+    <div className="homescreen">
+      <h2 className="homescreen__title">Latest Products</h2>
+      <div className="homescreen__products">
+        {loading ? (
+          <h2>Loading...</h2>
+        ) : error ? (
+          <h2>{error}</h2>
+        ) : (
+          products.map((product) => (
+            <Product
+              key={product._id}
+              name={product.name}
+              description={product.description}
+              price={product.price}
+              imageUrl={product.imageUrl}
+              productId={product._id}
+            />
+          ))
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default HomeScreen;
