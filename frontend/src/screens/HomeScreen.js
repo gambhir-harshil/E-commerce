@@ -21,7 +21,7 @@ function HomeScreen() {
         <div className='homescreen'>
             <h2 className='homescreen_title'>Latest Products</h2>
             <div className="homescreen_products">
-                {loading ? 
+                {loading ? (
                     <div className="centerdiv">
                     <ul>
                         <li></li>
@@ -31,9 +31,9 @@ function HomeScreen() {
                         <li></li>
                         <li></li>
                     </ul>
-                </div>:
-                    error ? <h2> { error } </h2> : 
-                        products.map(product => (
+                </div> ):
+                    error ? (<h2> { error } </h2>) : (
+                        products.map((product) => (
                             <Product 
                                 key={product._id} 
                                 productId={product._id} 
@@ -42,7 +42,8 @@ function HomeScreen() {
                                 price ={product.price}
                                 name={product.name}  
                             />
-                        ))}
+                        ))
+                    )}
             </div>
         </div>
     );
