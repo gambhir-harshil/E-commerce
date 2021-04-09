@@ -13,7 +13,7 @@ app.use(cors());
 
 app.use(express.json());
 
-app.get("https://sleepy-crag-69552.herokuapp.com/api/products/", (req, res) => {
+app.get("/", (req, res) => {
   res.json({ message: "API running..." });
 });
 
