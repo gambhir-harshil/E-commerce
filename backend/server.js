@@ -4,7 +4,6 @@ const cors = require("cors");
 const express = require("express");
 const productRoutes = require("./routes/productRoutes");
 const connectDB = require("./config/db");
-const path = require("path");
 
 connectDB();
 
@@ -17,13 +16,6 @@ app.use(express.json());
 app.get("https://sleepy-crag-69552.herokuapp.com/api/products/", (req, res) => {
   res.json({ message: "API running..." });
 });
-
-if (process.env.NODE_ENV === "production"){
-  app.use(express.static("build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname,  "../frontend/build", "index.html"));
-  });
-}
 
 app.use("https://sleepy-crag-69552.herokuapp.com/api/products/", productRoutes);
 
